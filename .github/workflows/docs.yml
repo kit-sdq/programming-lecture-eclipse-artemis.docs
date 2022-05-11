@@ -1,0 +1,27 @@
+name: Documentation
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  docs:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Fix Deployment for GH Pages
+        run: mkdir -p _build/dirhtml/ && touch _build/dirhtml/.nojekyll
+      - uses: ammaraskar/sphinx-action@master
+        with:
+          pre-build-command: "mkdir -p /usr/share/man/man1 && apt-get update --allow-releaseinfo-change -y && apt-get install -y openjdk-11-jre"
+          docs-folder: "."
+          build-command: make html dirhtml
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@v4.3.3
+        with:
+          branch: gh-pages
+          folder: _build/dirhtml/
+          clean: true
+
+
