@@ -2,11 +2,13 @@
 <html class="no-js">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="../genindex/" /><link rel="search" title="Search" href="#" />
+    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="../../genindex/" /><link rel="search" title="Search" href="../../search/" /><link rel="next" title="Student Edition (Development)" href="../student.dev/" /><link rel="prev" title="Grading Edition (Development)" href="../../grading/grading.dev/" />
 
-    <meta name="generator" content="sphinx-4.5.0, furo 2022.04.07"/><title>Search - Programming Lecture: Eclipse Artemis 2.0.0 documentation</title><link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=68f4518137b9aefe99b631505a2064c3c42c9852" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
+    <meta name="generator" content="sphinx-4.5.0, furo 2022.04.07"/>
+        <title>Student Edition - Programming Lecture: Eclipse Artemis 2.0.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=68f4518137b9aefe99b631505a2064c3c42c9852" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
     
     
 
@@ -120,7 +122,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../"><div class="brand">Programming Lecture: Eclipse Artemis 2.0.0 documentation</div></a>
+      <a href="../../"><div class="brand">Programming Lecture: Eclipse Artemis 2.0.0 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -131,7 +133,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
@@ -140,22 +142,22 @@
   <aside class="sidebar-drawer">
     <div class="sidebar-container">
       
-      <div class="sidebar-sticky"><a class="sidebar-brand" href="../">
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../../">
   
   
   <span class="sidebar-brand-text">Programming Lecture: Eclipse Artemis 2.0.0 documentation</span>
   
-</a><form class="sidebar-search-container" method="get" action="#" role="search">
+</a><form class="sidebar-search-container" method="get" action="../../search/" role="search">
   <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
   <input type="hidden" name="check_keywords" value="yes">
   <input type="hidden" name="area" value="default">
 </form>
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
-  <ul>
-<li class="toctree-l1"><a class="reference internal" href="../grading/grading/">Grading Edition</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../grading/grading.dev/">Grading Edition (Development)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../student/student/">Student Edition</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../student/student.dev/">Student Edition (Development)</a></li>
+  <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../grading/grading/">Grading Edition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grading/grading.dev/">Grading Edition (Development)</a></li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Student Edition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../student.dev/">Student Edition (Development)</a></li>
 </ul>
 
 </div>
@@ -182,31 +184,78 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
             <div class="visually-hidden">Toggle table of contents sidebar</div>
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
         </div>
         <article role="main">
-          
-<noscript>
-<div class="admonition error">
-  <p class="admonition-title">Error</p>
-  <p>
-    Please activate JavaScript to enable the search functionality.
-  </p>
+          <div class="section" id="student-edition">
+<h1>Student Edition<a class="headerlink" href="#student-edition" title="Permalink to this headline">#</a></h1>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This docs might be deprecated!</p>
 </div>
-</noscript>
-
-<div id="search-results"></div>
+<p>The main goal of the plugin is to provide students with an IDE, which they can use to edit their weekly programming exercises or programming exams. Therefore, the plugin abstracts basic GIT functionalities.</p>
+<div class="section" id="working-with-the-gui">
+<h2>Working with the GUI<a class="headerlink" href="#working-with-the-gui" title="Permalink to this headline">#</a></h2>
+<div class="section" id="main-tab">
+<h3>Main-Tab<a class="headerlink" href="#main-tab" title="Permalink to this headline">#</a></h3>
+<p>The GUI consists of two parts. The first and main part is the exercise tab. Here the student selects the course, the exam and the exercise he wants to edit. If the student wants to edit a weekly exercise only, he must choose “None” as exam.
+The student uses the “Start Exercise” – button to load the selected exercise into the local Eclipse workspace. In the background a “git clone” of the remote git repository with the exercise is executed. Now the student can open and edit the exercise in Eclipse.
+To submit his solution the student uses the “Submit”- button. After a click on the button the selected exercise will be uploaded to a remote git repository. Hence, a git commit and a git push is executed in the background.</p>
+<p>If the student wants to delete his last changes, he uses the “Clean”-button. It executes a clean on the local git repository.
+If the student wants to reset the whole local repository, for example due to added files. The student either deletes the project including the exercise in Eclipse or he uses the reset button. If he chooses the first option, he needs to make sure to delete the whole folder of the disk as well and needs to start the exercise again. The reset button on the other hand deletes the project of the selected exercises and clones the repository again automatically.
+The last button “Refresh Preferences” on the main part refreshes the set properties of the preferences tab and tries to reconnect to Artemis via REST and via websocket connection.</p>
+<img alt="../../_images/studentedition_exercisetab.png" src="../../_images/studentedition_exercisetab.png"/>
+</div>
+<div class="section" id="result-tab">
+<h3>Result-Tab<a class="headerlink" href="#result-tab" title="Permalink to this headline">#</a></h3>
+<p>The second part is the Result tab. Here the latest results of the selected exercise are shown.</p>
+<p>In the first part of the tab general information about the result is shown. For instance, it is shown if the student succeeded the exercise, how many tests he failed or succeeded and what day and time the result was created.</p>
+<p>In the second part all executed tests are shown in a table. Here the student can see which tests he failed and maybe further information on each individual test.</p>
+<img alt="../../_images/studentedition_results.png" src="../../_images/studentedition_results.png"/>
+</div>
+<div class="section" id="exam-handling">
+<h3>Exam Handling<a class="headerlink" href="#exam-handling" title="Permalink to this headline">#</a></h3>
+<p>To start an exam the student must select the exam in the main tab. The student will than be asked if he wants to start the exam. Afterwards, the student selects the exercises of the started exam. Here the exercises can be edited, submitted and cleaned as normal exercises.</p>
+<p>Beneath the buttons all information about the exam is shown, for example the due date.
+To end the exam the student has to end the exam with the artemis website. It is not possible to end the exam in Eclipse.</p>
+<img alt="../../_images/studentedition_exams.png" src="../../_images/studentedition_exams.png"/>
+</div>
+<div class="section" id="artemis-student-preferences">
+<h3>Artemis-Student-Preferences<a class="headerlink" href="#artemis-student-preferences" title="Permalink to this headline">#</a></h3>
+<p>User data are persisted in the preferences. Here the student sets the base URL to Artemis and sets the user credentials. To update the preferences the “Refresh Preferences” button must be pressed in the main tab.
+Otherwise, the changes will only take effect after a restart.</p>
+</div>
+</div>
+</div>
 
         </article>
       </div>
       <footer>
         
         <div class="related-pages">
-          
-          
+          <a class="next-page" href="../student.dev/">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Student Edition (Development)</div>
+              </div>
+              <svg><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="../../grading/grading.dev/">
+              <svg><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Grading Edition (Development)</div>
+                
+              </div>
+            </a>
         </div>
         <div class="bottom-of-page">
           <div class="left-details">
@@ -232,19 +281,41 @@
         
       </footer>
     </div>
-    <aside class="toc-drawer no-toc">
+    <aside class="toc-drawer">
       
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            Contents
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Student Edition</a><ul>
+<li><a class="reference internal" href="#working-with-the-gui">Working with the GUI</a><ul>
+<li><a class="reference internal" href="#main-tab">Main-Tab</a></li>
+<li><a class="reference internal" href="#result-tab">Result-Tab</a></li>
+<li><a class="reference internal" href="#exam-handling">Exam Handling</a></li>
+<li><a class="reference internal" href="#artemis-student-preferences">Artemis-Student-Preferences</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
       
       
     </aside>
   </div>
-</div><script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/scripts/furo.js"></script>
-    
-<script src="../_static/searchtools.js"></script>
-<script src="../_static/language_data.js"></script>
-<script src="../searchindex.js"></script></body>
+</div><script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/scripts/furo.js"></script>
+    </body>
 </html>

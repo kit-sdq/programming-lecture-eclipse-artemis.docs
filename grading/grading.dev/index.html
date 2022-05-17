@@ -1,0 +1,502 @@
+<!doctype html>
+<html class="no-js">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="../../genindex/" /><link rel="search" title="Search" href="../../search/" /><link rel="next" title="Student Edition" href="../../student/student/" /><link rel="prev" title="Grading Edition" href="../grading/" />
+
+    <meta name="generator" content="sphinx-4.5.0, furo 2022.04.07"/>
+        <title>Grading Edition (Development) - Programming Lecture: Eclipse Artemis 2.0.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=68f4518137b9aefe99b631505a2064c3c42c9852" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../../"><div class="brand">Programming Lecture: Eclipse Artemis 2.0.0 documentation</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../../">
+  
+  
+  <span class="sidebar-brand-text">Programming Lecture: Eclipse Artemis 2.0.0 documentation</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../../search/" role="search">
+  <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../grading/">Grading Edition</a></li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Grading Edition (Development)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../student/student/">Student Edition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../student/student.dev/">Student Edition (Development)</a></li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container"><div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <div class="section" id="grading-edition-development">
+<h1>Grading Edition (Development)<a class="headerlink" href="#grading-edition-development" title="Permalink to this headline">#</a></h1>
+<p>This section is about the development in the grading (but also for the student) edition.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This docs might be deprecated!</p>
+</div>
+<div class="section" id="setting-up-eclipse">
+<h2>Setting up Eclipse<a class="headerlink" href="#setting-up-eclipse" title="Permalink to this headline">#</a></h2>
+<ol class="arabic simple">
+<li><p>In general, you can use any distribution of eclipse. We’d suggest to you to use “eclipse for eclipse committers” for Plugin development.</p></li>
+<li><p>Target Platform: Install the development section of the <a class="reference external" href="https://kit-sdq.github.io/programming-lecture-eclipse-artemis/">Update Site</a>.</p></li>
+<li><dl class="simple">
+<dt>API Baseline</dt><dd><ul class="simple">
+<li><p>Navigate to “Window &gt; Preferences &gt; Plug-in Development &gt; API Baselines” (This will only be available in the Eclipse for eclipse comitters build or after installing all development dependencies from the update site).</p></li>
+<li><p>Click “Add Baseline…”.</p></li>
+<li><p>Select “A target platform”, then click “Next”.</p></li>
+<li><p>Enter a name for the target platform.</p></li>
+<li><p>As a target platform you will want to use the “OSGi - REST” or the “Active” platform. Select it and hit “Finish”.</p></li>
+<li><p>Click “Apply”. Eclipse now builds something. This might take some time.</p></li>
+<li><p>Click “Apply and close”.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Open project</dt><dd><ul class="simple">
+<li><p>Clone <a class="reference external" href="https://github.com/kit-sdq/programming-lecture-eclipse-artemis">this</a> repository into your eclipse workspace.</p></li>
+<li><p>Use File &gt; Open Project from Filesystem to open the project.</p></li>
+<li><p>Hit the “Directory…” button and select the repository cloned two steps ago. Now some modules should show up below.</p></li>
+<li><p>Hit “Select All” (which might not actually select all) and then “Finish”.</p></li>
+<li><p>You now have the project imported. You might see some errors. The errors for the “jvm” module can be ignored. The project builds fine anyways.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Run Configuration</dt><dd><ol class="loweralpha simple">
+<li><p>Create a new eclipse run configuration. Do not edit anything. Just start it and click continue if eclipse shows some warnings :)</p></li>
+<li><dl class="simple">
+<dt>(Alternative) Create a run configuration (more specific)</dt><dd><ul class="simple">
+<li><p>Navigate to <cite>edu.kit.kastel.sdq.eclipse.grading.client</cite> and open the <cite>plugin.xml</cite> file.</p></li>
+<li><p>Click the small green arrow in the top right corner</p></li>
+<li><p>This will either build the PlugIn (you are done) or it will crash (you have to continue with the next step).</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ol>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Fix for possible Issues with the Run Configuration</dt><dd><ul class="simple">
+<li><p>There is an issue where some dependencies are duplicated which prevents the PlugIn from building.</p></li>
+<li><p>To resolve this edit the run configuration by clicking “Run &gt; Run Configurations” and selecting the tab “Eclipse Application &gt; Eclipse Application”</p></li>
+<li><p>Navigate to the Plug-ins tab.</p></li>
+<li><p>Change the “Launch with” dropdown to “plug-ins selected below only”. A long list of plugins will appear.</p></li>
+<li><p>Hit “Apply” and then “Run”. This will most likely not work though</p></li>
+<li><dl class="simple">
+<dt>Fix 1: (Fast but unlikely to work. Try this first.)</dt><dd><ul>
+<li><p>Click the “Select All” button on the right and then apply and run again.</p></li>
+<li><p>This has worked on some machines, not all though</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Fix 2: (Tedious but worked more often)</dt><dd><ul>
+<li><p>Click the “Validate Plug-ins” button.</p></li>
+<li><p>A long lost of errors appears. Expand the errors until you find one of the type “2 versions of singleton &lt;plugin name&gt; exist”.</p></li>
+<li><p>This is a duplicate plugin.</p></li>
+<li><p>Find the plugin in the plugin list above. There should be 2 entries for the name with different versions.</p></li>
+<li><p>Deselect the plugin with that name and the <strong>lower</strong> version, leaving the newer one active.</p></li>
+<li><p>Again, apply and run.</p></li>
+<li><p>Repeat this for all plugins that exhibit this kind of error.</p></li>
+<li><p>At some point you will be left with only about three issues that are of a different kind and another eclipse instance will start. At that point you are done and you can start developing the grading tool plugin.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ol>
+</div>
+<div class="section" id="architecture">
+<h2>Architecture<a class="headerlink" href="#architecture" title="Permalink to this headline">#</a></h2>
+<p>The architectural idea is based on having three plugins and an API plugin over which those plugins communicate.
+That allows for more easily exchanging view, core/ Backend or client and also clearly defines borders, making parallel work easier and reducing coupling.</p>
+<div class="section" id="core-backend">
+<h3>Core / Backend<a class="headerlink" href="#core-backend" title="Permalink to this headline">#</a></h3>
+<p>Our Backend (core package) provides functionality for</p>
+<ul class="simple">
+<li><p>managing annotations</p></li>
+<li><p>calculating penalties</p></li>
+<li><p>serializing and deserializing annotations (via artemis client as a network interface)</p></li>
+<li><p>mapping plugin-internal state to artemis-internal state</p></li>
+<li><p>keeping track of state</p></li>
+</ul>
+</div>
+<div class="section" id="artemis-client">
+<h3>Artemis Client<a class="headerlink" href="#artemis-client" title="Permalink to this headline">#</a></h3>
+<p>The Artemis Client provides certain calls to artemis needed by the Backend.</p>
+</div>
+<div class="section" id="gui">
+<h3>GUI<a class="headerlink" href="#gui" title="Permalink to this headline">#</a></h3>
+<p>Here some rules / guides for UI development.</p>
+<div class="section" id="creating-new-view-elements">
+<h4>Creating new view elements<a class="headerlink" href="#creating-new-view-elements" title="Permalink to this headline">#</a></h4>
+<p>New view elements (buttons, tabs, etc.) should be added to the <em>ArtemisGradingView</em> class.
+Every tab has got his own method (e.g <em>createBacklogTab(…)</em> ).</p>
+<p>If the new view element is state-dependent.
+You will have to update the <em>updateState()</em> method.
+If you create new views use the <a class="reference external" href="https://www.eclipse.org/windowbuilder/">Window Builder</a>.</p>
+</div>
+<div class="section" id="new-calls-to-the-backend">
+<h4>New calls to the Backend<a class="headerlink" href="#new-calls-to-the-backend" title="Permalink to this headline">#</a></h4>
+<p>New calls to the Backend can be realized through the <em>ArtemisViewController</em> class. Then call the method in the view using the <em>ArtemisViewController</em>.</p>
+<p>When the class is getting to messy, it would be a good idea to separate the calls according to the Backend controllers</p>
+</div>
+<div class="section" id="changing-preferences">
+<h4>Changing Preferences<a class="headerlink" href="#changing-preferences" title="Permalink to this headline">#</a></h4>
+<p>The preference page is defined in the <em>ArtemisPreferencesPage</em> class.
+A new field can be added in the <em>createFieldEditors()</em> method.
+The initial values are set in the <em>PreferenceInitializer</em> class.</p>
+<p>An example with the field for the absolute config path:</p>
+<div class="literal-block-wrapper docutils container" id="id1">
+<div class="code-block-caption"><span class="caption-text">Preferences</span><a class="headerlink" href="#id1" title="Permalink to this code">#</a></div>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="w"> </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">createFieldEditors</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">             </span><span class="kd">var</span><span class="w"> </span><span class="n">field</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">FileFieldEditor</span><span class="p">(</span><span class="n">PreferenceConstants</span><span class="p">.</span><span class="na">ABSOLUTE_CONFIG_PATH</span><span class="p">,</span><span class="w"> </span><span class="n">I18N</span><span class="p">().</span><span class="na">config</span><span class="p">(),</span><span class="w"> </span><span class="n">parent</span><span class="p">);</span><span class="w"></span>
+<span class="w">             </span><span class="k">this</span><span class="p">.</span><span class="na">addField</span><span class="p">(</span><span class="n">field</span><span class="p">);</span><span class="w"></span>
+<span class="w">     </span><span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="adding-marker-attributes">
+<h4>Adding marker attributes<a class="headerlink" href="#adding-marker-attributes" title="Permalink to this headline">#</a></h4>
+<p>A new attribute to the marker can be added in the plugin.xml.
+If the field should appear in the Assessment Annotation View, a class needs to be created for the field and it must be added to the <em>markerSupportGenerator</em> in the plugin.xml.</p>
+<p>To make the name of the attribute easy to change, it should be defined as constant in the <em>AssessmentUtilities</em> class. The attribute should be set in the <em>addAssessmentAnnotaion(…)</em> method and the <em>createMarkerForAnnotation(…)</em> method in the <em>ArtemisViewController</em> class.</p>
+<p>For examples just look in the plugin.xml at the <em>org.eclipse.ui.ide.markerSupport</em> extension and the <em>edu.kit.kastel.eclipse.grading.view.marker</em> package for the field classes.</p>
+</div>
+</div>
+<div class="section" id="creating-a-new-penaltyrule">
+<h3>Creating a new PenaltyRule<a class="headerlink" href="#creating-a-new-penaltyrule" title="Permalink to this headline">#</a></h3>
+<ol class="arabic simple">
+<li><p>Add a Class derived from <em>edu.kit.kastel.eclipse.grading.core.model.PenaltyRule</em></p></li>
+<li><dl class="simple">
+<dt>Add a Constructor for that class in <em>edu.kit.kastel.eclipse.grading.core.config.PenaltyRuleDeserializer.PenaltyRuleType</em>.</dt><dd><p>Note that herein, you have access to the penaltyRule’s JsonNode, so you may fetch values you define in your config to construct your PenaltyRule:</p>
+</dd>
+</dl>
+</li>
+</ol>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">enum</span><span class="w"> </span><span class="n">PenaltyRuleType</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="c1">//Need to add a new enum value with a short Name (that must be used in the config file) and a constructor based on the json node.</span><span class="w"></span>
+<span class="w">        </span><span class="n">THRESHOLD_PENALTY_RULE_TYPE</span><span class="w"> </span><span class="p">(</span><span class="n">ThresholdPenaltyRule</span><span class="p">.</span><span class="na">SHORT_NAME</span><span class="p">,</span><span class="w"> </span><span class="n">ThresholdPenaltyRule</span><span class="p">::</span><span class="k">new</span><span class="p">),</span><span class="w"></span>
+<span class="w">        </span><span class="n">CUSTOM_PENALTY_RULE_TYPE</span><span class="w"> </span><span class="p">(</span><span class="n">CustomPenaltyRule</span><span class="p">.</span><span class="na">SHORT_NAME</span><span class="p">,</span><span class="w"> </span><span class="n">penaltyRuleNode</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">CustomPenaltyRule</span><span class="p">()),</span><span class="w"></span>
+<span class="w">        </span><span class="n">MY_NEW_PENALTY_RULE_TYPE</span><span class="w"> </span><span class="p">(</span><span class="n">MyNewPenaltyRule</span><span class="p">.</span><span class="na">SHORT_NAME</span><span class="p">,</span><span class="w"> </span><span class="n">penaltyRuleNode</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">MyNewPenaltyRule</span><span class="p">(</span><span class="n">penaltyRuleNode</span><span class="p">));</span><span class="w"></span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>use the new PenaltyRule in your config.json:</p></li>
+</ol>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="nt">"mistakeTypes"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">    </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="nt">"shortName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"idk"</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">"button"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MyMistakeType"</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"You made a grave mistake."</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">"penaltyRule"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="nt">"shortName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"myNewPenaltyRule"</span><span class="p">,</span><span class="w"></span>
+<span class="w">            </span><span class="nt">"penalty"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"></span>
+<span class="w">            </span><span class="nt">"penaltyOnMoreThanThreshold"</span><span class="p">:</span><span class="w"> </span><span class="mi">500</span><span class="p">,</span><span class="w"></span>
+<span class="w">            </span><span class="nt">"threshold"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="w"></span>
+<span class="w">        </span><span class="p">},</span><span class="w"></span>
+<span class="w">        </span><span class="nt">"appliesTo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"style"</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">]</span><span class="w"></span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="controllers">
+<h3>Controllers<a class="headerlink" href="#controllers" title="Permalink to this headline">#</a></h3>
+<p>There are three Controllers:</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt>The AssessmentController controlls a single assessment in terms of managing annotations. It provides Methods like</dt><dd><ul>
+<li><p><em>addAnnotation(..)</em></p></li>
+<li><p><em>getAnnotations()</em></p></li>
+<li><p><em>resetAndRestartAssessment()</em></p></li>
+<li><p><em>…</em></p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>The ArtemisController handles artemis-related stuff, including</dt><dd><ul>
+<li><p>managing Locks and <em>Feedbacks</em> which contain data gotten from locking a submission.</p></li>
+<li><p>retrieving information about Courses, Submissions, Exercises, Exams, … from the artemis client</p></li>
+<li><p>starting, saving and submitting assessments.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p>The SystemwideController holds and manages the Backend state.
+It acts as the main interface to the GUI.
+All calls relevant to our Backend state (see section about the Backend state machine) go through here.</p></li>
+</ul>
+</div>
+</div>
+</div>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="../../student/student/">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Student Edition</div>
+              </div>
+              <svg><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="../grading/">
+              <svg><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Grading Edition</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2022, Software Design and Quality (SDQ)
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            <div class="icons">
+              <a class="muted-link " href="https://github.com/kit-sdq/programming-lecture-eclipse-artemis" aria-label="GitHub">
+                <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path>
+                </svg>
+            </a>
+              
+            </div>
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            Contents
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Grading Edition (Development)</a><ul>
+<li><a class="reference internal" href="#setting-up-eclipse">Setting up Eclipse</a></li>
+<li><a class="reference internal" href="#architecture">Architecture</a><ul>
+<li><a class="reference internal" href="#core-backend">Core / Backend</a></li>
+<li><a class="reference internal" href="#artemis-client">Artemis Client</a></li>
+<li><a class="reference internal" href="#gui">GUI</a><ul>
+<li><a class="reference internal" href="#creating-new-view-elements">Creating new view elements</a></li>
+<li><a class="reference internal" href="#new-calls-to-the-backend">New calls to the Backend</a></li>
+<li><a class="reference internal" href="#changing-preferences">Changing Preferences</a></li>
+<li><a class="reference internal" href="#adding-marker-attributes">Adding marker attributes</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#creating-a-new-penaltyrule">Creating a new PenaltyRule</a></li>
+<li><a class="reference internal" href="#controllers">Controllers</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/scripts/furo.js"></script>
+    </body>
+</html>
