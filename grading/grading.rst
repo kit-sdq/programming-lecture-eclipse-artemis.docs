@@ -103,7 +103,7 @@ Configuration File
 """"""""""""""""""
 
 To Configure mistake types, rating groups and whatnot, we use a config file.
-See `docs/examples/config_v4.json <https://github.com/kit-sdq/programming-lecture-eclipse-artemis/blob/main/docs/examples/config_v4.json>`_ for an example configuration.
+See `docs/examples/config_v5.json <https://github.com/kit-sdq/programming-lecture-eclipse-artemis/blob/main/docs/examples/config_v5.json>`_ for an example configuration.
 
 There are rating groups, mistake types and penalty rules.
 The main config features are explained in the following.
@@ -117,9 +117,10 @@ A rating group consists of multiple mistake types and an optional *penaltyLimit*
 
     "ratingGroups": [
         {
-            "shortName": "modelling",
-            "displayName": "OO-Modellierung",
-            "penaltyLimit": 16
+            "shortName": "functionality",
+            "displayName": "Funktionalität",
+            "negativeLimit": -20,
+            "positiveLimit": null
         }
     ]
 
@@ -138,7 +139,7 @@ A mistake type belongs to a rating group and has a penalty rule that defines the
             "penaltyRule": {
                 "shortName": "customPenalty"
             },
-            "appliesTo": "style"
+            "appliesTo": "functionality"
         },
         {
             "shortName": "jdEmpty",
@@ -149,7 +150,18 @@ A mistake type belongs to a rating group and has a penalty rule that defines the
                 "threshold": 1,
                 "penalty": 5
             },
-            "appliesTo": "style"
+            "appliesTo": "functionality"
+        },
+        {
+            "shortName": "stackingXY",
+            "button": "Stacking (XY)",
+            "message": "Hier wird mehrmals abgezogen",
+            "penaltyRule": {
+              "shortName": "stackingPenalty",
+              "penalty": 0.5,
+              "maxUses": 4
+            },
+            "appliesTo": "functionality"
         }
     ]
 
