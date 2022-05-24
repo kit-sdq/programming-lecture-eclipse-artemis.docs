@@ -131,6 +131,7 @@ Mistake Types
 A mistake type belongs to a rating group and has a penalty rule that defines the penalty calculation logic. Config File:
 
 .. code-block:: json
+
     "mistakeTypes" : [
         {
             "shortName": "custom",
