@@ -107,6 +107,7 @@ See `docs/examples/config_v5.json <https://github.com/kit-sdq/programming-lectur
 
 There are rating groups, mistake types and penalty rules.
 The main config features are explained in the following.
+Be aware of `"positiveFeedbackAllowed": true` which enables or disables the positive custom feedback ability.
 
 Rating Groups
 """""""""""""
