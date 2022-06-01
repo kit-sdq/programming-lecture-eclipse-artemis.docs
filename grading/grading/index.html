@@ -5,7 +5,7 @@
     <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="../../genindex/" /><link rel="search" title="Search" href="../../search/" /><link rel="next" title="Grading Edition (Development)" href="../grading.dev/" /><link rel="prev" title="Programming Lecture: Eclipse Artemis" href="../../" />
 
     <meta name="generator" content="sphinx-4.5.0, furo 2022.04.07"/>
-        <title>Grading Edition - Programming Lecture: Eclipse Artemis 2.0.0 documentation</title>
+        <title>Grading Edition - Programming Lecture: Eclipse Artemis 2.3.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=68f4518137b9aefe99b631505a2064c3c42c9852" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
@@ -122,7 +122,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../../"><div class="brand">Programming Lecture: Eclipse Artemis 2.0.0 documentation</div></a>
+      <a href="../../"><div class="brand">Programming Lecture: Eclipse Artemis 2.3.0 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -145,7 +145,7 @@
       <div class="sidebar-sticky"><a class="sidebar-brand" href="../../">
   
   
-  <span class="sidebar-brand-text">Programming Lecture: Eclipse Artemis 2.0.0 documentation</span>
+  <span class="sidebar-brand-text">Programming Lecture: Eclipse Artemis 2.3.0 documentation</span>
   
 </a><form class="sidebar-search-container" method="get" action="../../search/" role="search">
   <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
@@ -279,20 +279,57 @@ The annotation can be deleted by deleting the marker.</p>
 <div class="section" id="backend-configuration">
 <h2>Backend Configuration<a class="headerlink" href="#backend-configuration" title="Permalink to this headline">#</a></h2>
 <p>To Configure mistake types, rating groups and whatnot, we use a config file.
-See <a class="reference external" href="https://github.com/kit-sdq/programming-lecture-eclipse-artemis/blob/main/docs/examples/config_v4.json">docs/examples/config_v4.json</a> for an example configuration.</p>
+See <a class="reference external" href="https://github.com/kit-sdq/programming-lecture-eclipse-artemis/blob/main/docs/examples/config_v5.json">docs/examples/config_v5.json</a> for an example configuration.</p>
 <p>There are rating groups, mistake types and penalty rules.
-The main config features are explained in the following.</p>
+The main config features are explained in the following.
+Be aware of <cite>“positiveFeedbackAllowed”: true</cite> which enables or disables the positive custom feedback ability.</p>
 <p>A rating group consists of multiple mistake types and an optional <em>penaltyLimit</em>. That limit is used for penalty calculation.</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="nt">"ratingGroups"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
 <span class="w">    </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="nt">"shortName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"modelling"</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="nt">"displayName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OO-Modellierung"</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="nt">"penaltyLimit"</span><span class="p">:</span><span class="w"> </span><span class="mi">16</span><span class="w"></span>
+<span class="w">        </span><span class="nt">"shortName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"functionality"</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">"displayName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Funktionalität"</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">"negativeLimit"</span><span class="p">:</span><span class="w"> </span><span class="mi">-20</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">"positiveLimit"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w"></span>
 <span class="w">    </span><span class="p">}</span><span class="w"></span>
 <span class="p">]</span><span class="w"></span>
 </pre></div>
 </div>
 <p>A mistake type belongs to a rating group and has a penalty rule that defines the penalty calculation logic. Config File:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="nt">"mistakeTypes"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">    </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="nt">"shortName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"custom"</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">"button"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Custom Penalty"</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">"penaltyRule"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="nt">"shortName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"customPenalty"</span><span class="w"></span>
+<span class="w">        </span><span class="p">},</span><span class="w"></span>
+<span class="w">        </span><span class="nt">"appliesTo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"functionality"</span><span class="w"></span>
+<span class="w">    </span><span class="p">},</span><span class="w"></span>
+<span class="w">    </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="nt">"shortName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"jdEmpty"</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">"button"</span><span class="p">:</span><span class="w"> </span><span class="s2">"JavaDoc Leer"</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"JavaDoc ist leer oder nicht vorhanden"</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">"penaltyRule"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="nt">"shortName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"thresholdPenalty"</span><span class="p">,</span><span class="w"></span>
+<span class="w">            </span><span class="nt">"threshold"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"></span>
+<span class="w">            </span><span class="nt">"penalty"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="w"></span>
+<span class="w">        </span><span class="p">},</span><span class="w"></span>
+<span class="w">        </span><span class="nt">"appliesTo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"functionality"</span><span class="w"></span>
+<span class="w">    </span><span class="p">},</span><span class="w"></span>
+<span class="w">    </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="nt">"shortName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"stackingXY"</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">"button"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Stacking (XY)"</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Hier wird mehrmals abgezogen"</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">"penaltyRule"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">          </span><span class="nt">"shortName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"stackingPenalty"</span><span class="p">,</span><span class="w"></span>
+<span class="w">          </span><span class="nt">"penalty"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.5</span><span class="p">,</span><span class="w"></span>
+<span class="w">          </span><span class="nt">"maxUses"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="w"></span>
+<span class="w">        </span><span class="p">},</span><span class="w"></span>
+<span class="w">        </span><span class="nt">"appliesTo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"functionality"</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">]</span><span class="w"></span>
+</pre></div>
+</div>
 <p>See the Development chapter for more info about creating a new <cite>PenaltyRule</cite>.</p>
 <p>Currently, there are two penalty rule types you may use in your config:</p>
 <ul class="simple">
