@@ -1,8 +1,13 @@
 Student Edition
 ===============
 
-.. warning:: This docs might be deprecated!
-The main goal of the plugin is to provide students with an IDE, which they can use to edit their weekly programming exercises or programming exams. Therefore, the plugin abstracts basic GIT functionalities.
+Artemis Preferences
+-------------------
+
+User data are persisted in the Artemis Grading Preferences. You can what you need to fill in down below. The relative path of the config refers to the downloaded project and can be activated by the check box. To update the preferences, the "Refresh Artemis State" button must be pressed in the Assessment tab. Otherwise the changes will only take effect after a restart.
+
+.. image:: ../images/preferences.png
+
 
 Working with the GUI
 --------------------
