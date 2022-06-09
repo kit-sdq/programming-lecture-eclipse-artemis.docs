@@ -281,11 +281,16 @@ The annotation can be deleted by deleting the marker.</p>
 <section id="backend-configuration">
 <h2>Backend Configuration<a class="headerlink" href="#backend-configuration" title="Permalink to this heading">#</a></h2>
 <p>This section deals with the configuration of the backend.</p>
+<section id="configuration-file">
+<h3>Configuration File<a class="headerlink" href="#configuration-file" title="Permalink to this heading">#</a></h3>
 <p>To Configure mistake types, rating groups and whatnot, we use a config file.
 See <a class="reference external" href="https://github.com/kit-sdq/programming-lecture-eclipse-artemis/blob/main/docs/examples/config_v5.json">docs/examples/config_v5.json</a> for an example configuration.</p>
 <p>There are rating groups, mistake types and penalty rules.
 The main config features are explained in the following.
 Be aware of <cite>“positiveFeedbackAllowed”: true</cite> which enables or disables the positive custom feedback ability.</p>
+</section>
+<section id="rating-groups">
+<h3>Rating Groups<a class="headerlink" href="#rating-groups" title="Permalink to this heading">#</a></h3>
 <p>A rating group consists of multiple mistake types and an optional <em>penaltyLimit</em>. That limit is used for penalty calculation.</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="nt">&quot;ratingGroups&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
 <span class="w">    </span><span class="p">{</span><span class="w"></span>
@@ -297,6 +302,9 @@ Be aware of <cite>“positiveFeedbackAllowed”: true</cite> which enables or di
 <span class="p">]</span><span class="w"></span>
 </pre></div>
 </div>
+</section>
+<section id="mistake-types">
+<h3>Mistake Types<a class="headerlink" href="#mistake-types" title="Permalink to this heading">#</a></h3>
 <p>A mistake type belongs to a rating group and has a penalty rule that defines the penalty calculation logic. Config File:</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="nt">&quot;mistakeTypes&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
 <span class="w">    </span><span class="p">{</span><span class="w"></span>
@@ -334,6 +342,9 @@ Be aware of <cite>“positiveFeedbackAllowed”: true</cite> which enables or di
 </pre></div>
 </div>
 <p>See the Development chapter for more info about creating a new <cite>PenaltyRule</cite>.</p>
+</section>
+<section id="penalty-calculation-artemis-mapping">
+<h3>Penalty Calculation / Artemis Mapping<a class="headerlink" href="#penalty-calculation-artemis-mapping" title="Permalink to this heading">#</a></h3>
 <p>Currently, there are two penalty rule types you may use in your config:</p>
 <ul class="simple">
 <li><p><cite>ThresholdPenalty</cite>: Iff the number of annotations with the given <cite>mistakeType &gt;= $threshold</cite>, then <cite>penalty</cite> is added</p></li>
@@ -347,6 +358,7 @@ Be aware of <cite>“positiveFeedbackAllowed”: true</cite> which enables or di
 <li><p>Each Rating group generates a <cite>MANUAL_UNREFERENCED</cite> feedback, visible <em>below</em> the editor (in the browser artemis client). Here, penalty points are given.</p></li>
 <li><p>Also, one (or more) MANUAL_UNREFERENCED feedback (invisible for students) is generated, which is used as a database for this client (containing serialized client-specific annotation data, including model identifiers, gui markers, startLine, endLine, …)</p></li>
 </ul>
+</section>
 </section>
 </section>
 
@@ -428,7 +440,13 @@ Be aware of <cite>“positiveFeedbackAllowed”: true</cite> which enables or di
 </li>
 </ul>
 </li>
-<li><a class="reference internal" href="#backend-configuration">Backend Configuration</a></li>
+<li><a class="reference internal" href="#backend-configuration">Backend Configuration</a><ul>
+<li><a class="reference internal" href="#configuration-file">Configuration File</a></li>
+<li><a class="reference internal" href="#rating-groups">Rating Groups</a></li>
+<li><a class="reference internal" href="#mistake-types">Mistake Types</a></li>
+<li><a class="reference internal" href="#penalty-calculation-artemis-mapping">Penalty Calculation / Artemis Mapping</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
