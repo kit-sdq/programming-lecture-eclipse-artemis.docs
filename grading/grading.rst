@@ -98,6 +98,7 @@ The annotation can be deleted by deleting the marker.
 
 Backend Configuration
 ---------------------
+This section deals with the configuration of the backend.
 
 Configuration File
 """"""""""""""""""
