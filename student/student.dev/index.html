@@ -2,12 +2,13 @@
 <html class="no-js" lang="en">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="../../genindex/" /><link rel="search" title="Search" href="../../search/" /><link rel="prev" title="Student Edition" href="../student/" />
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+<link rel="index" title="Index" href="../../genindex/" /><link rel="search" title="Search" href="../../search/" /><link rel="prev" title="Student Edition" href="../student/" />
 
-    <meta name="generator" content="sphinx-5.0.0, furo 2022.04.07"/>
+    <meta name="generator" content="sphinx-5.0.1, furo 2022.06.04.1"/>
         <title>Student Edition (Development) - Programming Lecture: Eclipse Artemis 2.3.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=68f4518137b9aefe99b631505a2064c3c42c9852" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=40978830699223671f4072448e654b5958f38b89" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
     
     
@@ -176,7 +177,8 @@
           </svg>
           <span>Back to top</span>
         </a>
-        <div class="content-icon-container"><div class="theme-toggle-container theme-toggle-content">
+        <div class="content-icon-container">
+          <div class="theme-toggle-container theme-toggle-content">
             <button class="theme-toggle">
               <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
               <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
@@ -190,22 +192,22 @@
           </label>
         </div>
         <article role="main">
-          <div class="section" id="student-edition-development">
+          <section id="student-edition-development">
 <h1>Student Edition (Development)<a class="headerlink" href="#student-edition-development" title="Permalink to this heading">#</a></h1>
-<div class="section" id="install">
+<section id="install">
 <h2>Install<a class="headerlink" href="#install" title="Permalink to this heading">#</a></h2>
 <p>To install and run the product locally for development simply use Eclipse and install all plugins from the Update Site. For further readings follow “Development” from the Eclipse-Plugin for Grading.</p>
-</div>
-<div class="section" id="architecture">
+</section>
+<section id="architecture">
 <h2>Architecture<a class="headerlink" href="#architecture" title="Permalink to this heading">#</a></h2>
-<img alt="../../_images/studentedition_components.png" src="../../_images/studentedition_components.png"/>
+<img alt="../../_images/studentedition_components.png" src="../../_images/studentedition_components.png" />
 <p>The main architecture is based on the one presented in the grading-product. Only a few changes were made to split the two products. For further reading on these changes please read the “Main Changes” chapter.</p>
 <p>The architectural idea is based on having four plugins and an API plugin over which those plugins communicate. That allows for more easily exchanging view, core/ Backend or client and also clearly defines borders, making parallel work easier and reducing coupling. The coarse architecture of the Grading-Plugin was reused and adapted to ensure a parallel development of both plugins and to enhance the reuse of code.</p>
-<div class="section" id="common-student-and-grading-view">
+<section id="common-student-and-grading-view">
 <h3>Common, Student and Grading View<a class="headerlink" href="#common-student-and-grading-view" title="Permalink to this heading">#</a></h3>
 <p>Those plugins create the GUI for both plugins. The provided functionalities are described in the “Working with the GUI” chapter. The common plugin provides shared functionality of the student and grading view.</p>
-</div>
-<div class="section" id="core-backend">
+</section>
+<section id="core-backend">
 <h3>Core/ Backend<a class="headerlink" href="#core-backend" title="Permalink to this heading">#</a></h3>
 <p>The backend plugin (common.core) provides all fundamental functionalities for both plugins. It consists of multiple controllers. Each of these controllers has a single strictly defined purpose.</p>
 <p>The SystemwideController acts as facade to all other specified controllers. Here an abstract super class was defined. For the student and the grading view a specific controller was created which extends the super controller.</p>
@@ -213,16 +215,16 @@
 <p>The ExercicseController handles all git specific functionalities.</p>
 <p>The WebsocketController connects to a websocket and handles websocket events.</p>
 <p>The AssessmentController provides functionalities concerned with loading, editing and saving assessments. For further details have a look at the “Grading” chapter</p>
-</div>
-<div class="section" id="artemisclient">
+</section>
+<section id="artemisclient">
 <h3>ArtemisClient<a class="headerlink" href="#artemisclient" title="Permalink to this heading">#</a></h3>
 <p>Here mainly the REST-Clients are defined. For each domain a separate client was created. This helps to keep an overview on all implemented calls and therefore it is easier to find the desired REST-Calls.
 The RestClientManager creates and stores all clients, to enable a simple use of all different clients.</p>
 <p>Additionally, the websocket client is implemented here. The IWebsocketClient is concerned with setting up a websocket using the STOMP and SockJs protocol. On top of that, it is secured with SLL. The ArtemisSockJsSessionHandler handles incoming SockJs events. It subscribes to two topics. One that sends an event when a new submission was pushed to a git repo and one that sends an event when new results are available.
 .. image:: ../images/studentedition_restclients.png</p>
-</div>
-</div>
-<div class="section" id="main-changes">
+</section>
+</section>
+<section id="main-changes">
 <h2>Main Changes<a class="headerlink" href="#main-changes" title="Permalink to this heading">#</a></h2>
 <p>The main architecture is based on the one presented in the grading-product. Only a few changes were made to split the two products. In the following these changes will be explained. For further readings on the architecture please read the Architecture chapter of the grading product.</p>
 <p>To ensure a parallel development of the grading product and the student product, one focus was to split those two products as clean as possible, while using the same core functionalities. This enables to use bugfixes of the core to be used in both products and to reuse existing functionalities and code.</p>
@@ -236,8 +238,8 @@ One main new functionality is the websocket. It is introduced in the client proj
 <p>The view is split in three tabs. The main tab is similar to the one used by the grading product. Here courses, exams and exercises can be selected. Selected exercises can than be started, submitted or cleaned. Starting an exam clones the git repository in the local workspace. Submitting an exam commits new changes and pushes them to origin git repository. Cleaning reverts all uncommitted changes.
 In the Result tab results of the selected exercise are shown. Here you can see how many automatically executed tests were successful.
 Functionality which is used by the view of both plugins were moved to a new project called edu.kit.kastel.sdq.eclipse.common.view</p>
-</div>
-</div>
+</section>
+</section>
 
         </article>
       </div>

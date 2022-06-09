@@ -2,12 +2,13 @@
 <html class="no-js" lang="en">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="../../genindex/" /><link rel="search" title="Search" href="../../search/" /><link rel="next" title="Student Edition" href="../../student/student/" /><link rel="prev" title="Grading Edition" href="../grading/" />
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+<link rel="index" title="Index" href="../../genindex/" /><link rel="search" title="Search" href="../../search/" /><link rel="next" title="Student Edition" href="../../student/student/" /><link rel="prev" title="Grading Edition" href="../grading/" />
 
-    <meta name="generator" content="sphinx-5.0.0, furo 2022.04.07"/>
+    <meta name="generator" content="sphinx-5.0.1, furo 2022.06.04.1"/>
         <title>Grading Edition (Development) - Programming Lecture: Eclipse Artemis 2.3.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=68f4518137b9aefe99b631505a2064c3c42c9852" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=40978830699223671f4072448e654b5958f38b89" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
     
     
@@ -176,7 +177,8 @@
           </svg>
           <span>Back to top</span>
         </a>
-        <div class="content-icon-container"><div class="theme-toggle-container theme-toggle-content">
+        <div class="content-icon-container">
+          <div class="theme-toggle-container theme-toggle-content">
             <button class="theme-toggle">
               <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
               <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
@@ -190,14 +192,14 @@
           </label>
         </div>
         <article role="main">
-          <div class="section" id="grading-edition-development">
+          <section id="grading-edition-development">
 <h1>Grading Edition (Development)<a class="headerlink" href="#grading-edition-development" title="Permalink to this heading">#</a></h1>
 <p>This section is about the development in the grading (but also for the student) edition.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>This docs might be deprecated!</p>
 </div>
-<div class="section" id="setting-up-eclipse">
+<section id="setting-up-eclipse">
 <h2>Setting up Eclipse<a class="headerlink" href="#setting-up-eclipse" title="Permalink to this heading">#</a></h2>
 <ol class="arabic simple">
 <li><p>In general, you can use any distribution of eclipse. We’d suggest to you to use “eclipse for eclipse committers” for Plugin development.</p></li>
@@ -276,12 +278,12 @@
 </dl>
 </li>
 </ol>
-</div>
-<div class="section" id="architecture">
+</section>
+<section id="architecture">
 <h2>Architecture<a class="headerlink" href="#architecture" title="Permalink to this heading">#</a></h2>
 <p>The architectural idea is based on having three plugins and an API plugin over which those plugins communicate.
 That allows for more easily exchanging view, core/ Backend or client and also clearly defines borders, making parallel work easier and reducing coupling.</p>
-<div class="section" id="core-backend">
+<section id="core-backend">
 <h3>Core / Backend<a class="headerlink" href="#core-backend" title="Permalink to this heading">#</a></h3>
 <p>Our Backend (core package) provides functionality for</p>
 <ul class="simple">
@@ -291,28 +293,28 @@ That allows for more easily exchanging view, core/ Backend or client and also cl
 <li><p>mapping plugin-internal state to artemis-internal state</p></li>
 <li><p>keeping track of state</p></li>
 </ul>
-</div>
-<div class="section" id="artemis-client">
+</section>
+<section id="artemis-client">
 <h3>Artemis Client<a class="headerlink" href="#artemis-client" title="Permalink to this heading">#</a></h3>
 <p>The Artemis Client provides certain calls to artemis needed by the Backend.</p>
-</div>
-<div class="section" id="gui">
+</section>
+<section id="gui">
 <h3>GUI<a class="headerlink" href="#gui" title="Permalink to this heading">#</a></h3>
 <p>Here some rules / guides for UI development.</p>
-<div class="section" id="creating-new-view-elements">
+<section id="creating-new-view-elements">
 <h4>Creating new view elements<a class="headerlink" href="#creating-new-view-elements" title="Permalink to this heading">#</a></h4>
 <p>New view elements (buttons, tabs, etc.) should be added to the <em>ArtemisGradingView</em> class.
 Every tab has got his own method (e.g <em>createBacklogTab(…)</em> ).</p>
 <p>If the new view element is state-dependent.
 You will have to update the <em>updateState()</em> method.
 If you create new views use the <a class="reference external" href="https://www.eclipse.org/windowbuilder/">Window Builder</a>.</p>
-</div>
-<div class="section" id="new-calls-to-the-backend">
+</section>
+<section id="new-calls-to-the-backend">
 <h4>New calls to the Backend<a class="headerlink" href="#new-calls-to-the-backend" title="Permalink to this heading">#</a></h4>
 <p>New calls to the Backend can be realized through the <em>ArtemisViewController</em> class. Then call the method in the view using the <em>ArtemisViewController</em>.</p>
 <p>When the class is getting to messy, it would be a good idea to separate the calls according to the Backend controllers</p>
-</div>
-<div class="section" id="changing-preferences">
+</section>
+<section id="changing-preferences">
 <h4>Changing Preferences<a class="headerlink" href="#changing-preferences" title="Permalink to this heading">#</a></h4>
 <p>The preference page is defined in the <em>ArtemisPreferencesPage</em> class.
 A new field can be added in the <em>createFieldEditors()</em> method.
@@ -327,16 +329,16 @@ The initial values are set in the <em>PreferenceInitializer</em> class.</p>
 </pre></div>
 </div>
 </div>
-</div>
-<div class="section" id="adding-marker-attributes">
+</section>
+<section id="adding-marker-attributes">
 <h4>Adding marker attributes<a class="headerlink" href="#adding-marker-attributes" title="Permalink to this heading">#</a></h4>
 <p>A new attribute to the marker can be added in the plugin.xml.
 If the field should appear in the Assessment Annotation View, a class needs to be created for the field and it must be added to the <em>markerSupportGenerator</em> in the plugin.xml.</p>
 <p>To make the name of the attribute easy to change, it should be defined as constant in the <em>AssessmentUtilities</em> class. The attribute should be set in the <em>addAssessmentAnnotaion(…)</em> method and the <em>createMarkerForAnnotation(…)</em> method in the <em>ArtemisViewController</em> class.</p>
 <p>For examples just look in the plugin.xml at the <em>org.eclipse.ui.ide.markerSupport</em> extension and the <em>edu.kit.kastel.eclipse.grading.view.marker</em> package for the field classes.</p>
-</div>
-</div>
-<div class="section" id="creating-a-new-penaltyrule">
+</section>
+</section>
+<section id="creating-a-new-penaltyrule">
 <h3>Creating a new PenaltyRule<a class="headerlink" href="#creating-a-new-penaltyrule" title="Permalink to this heading">#</a></h3>
 <ol class="arabic simple">
 <li><p>Add a Class derived from <em>edu.kit.kastel.eclipse.grading.core.model.PenaltyRule</em></p></li>
@@ -356,24 +358,24 @@ If the field should appear in the Assessment Annotation View, a class needs to b
 <ol class="arabic simple" start="3">
 <li><p>use the new PenaltyRule in your config.json:</p></li>
 </ol>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="nt">"mistakeTypes"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="nt">&quot;mistakeTypes&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
 <span class="w">    </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="nt">"shortName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"idk"</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="nt">"button"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MyMistakeType"</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="nt">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"You made a grave mistake."</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="nt">"penaltyRule"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">            </span><span class="nt">"shortName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"myNewPenaltyRule"</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="nt">"penalty"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="nt">"penaltyOnMoreThanThreshold"</span><span class="p">:</span><span class="w"> </span><span class="mi">500</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="nt">"threshold"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;shortName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;idk&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;button&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MyMistakeType&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;You made a grave mistake.&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;penaltyRule&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="nt">&quot;shortName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;myNewPenaltyRule&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">            </span><span class="nt">&quot;penalty&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"></span>
+<span class="w">            </span><span class="nt">&quot;penaltyOnMoreThanThreshold&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">500</span><span class="p">,</span><span class="w"></span>
+<span class="w">            </span><span class="nt">&quot;threshold&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="w"></span>
 <span class="w">        </span><span class="p">},</span><span class="w"></span>
-<span class="w">        </span><span class="nt">"appliesTo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"style"</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;appliesTo&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;style&quot;</span><span class="w"></span>
 <span class="w">    </span><span class="p">}</span><span class="w"></span>
 <span class="p">]</span><span class="w"></span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="controllers">
+</section>
+<section id="controllers">
 <h3>Controllers<a class="headerlink" href="#controllers" title="Permalink to this heading">#</a></h3>
 <p>There are three Controllers:</p>
 <ul class="simple">
@@ -400,9 +402,9 @@ If the field should appear in the Assessment Annotation View, a class needs to b
 It acts as the main interface to the GUI.
 All calls relevant to our Backend state (see section about the Backend state machine) go through here.</p></li>
 </ul>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
         </article>
       </div>

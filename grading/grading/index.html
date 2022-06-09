@@ -2,12 +2,13 @@
 <html class="no-js" lang="en">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="../../genindex/" /><link rel="search" title="Search" href="../../search/" /><link rel="next" title="Grading Edition (Development)" href="../grading.dev/" /><link rel="prev" title="Programming Lecture: Eclipse Artemis" href="../../" />
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+<link rel="index" title="Index" href="../../genindex/" /><link rel="search" title="Search" href="../../search/" /><link rel="next" title="Grading Edition (Development)" href="../grading.dev/" /><link rel="prev" title="Programming Lecture: Eclipse Artemis" href="../../" />
 
-    <meta name="generator" content="sphinx-5.0.0, furo 2022.04.07"/>
+    <meta name="generator" content="sphinx-5.0.1, furo 2022.06.04.1"/>
         <title>Grading Edition - Programming Lecture: Eclipse Artemis 2.3.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=68f4518137b9aefe99b631505a2064c3c42c9852" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=40978830699223671f4072448e654b5958f38b89" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
     
     
@@ -176,7 +177,8 @@
           </svg>
           <span>Back to top</span>
         </a>
-        <div class="content-icon-container"><div class="theme-toggle-container theme-toggle-content">
+        <div class="content-icon-container">
+          <div class="theme-toggle-container theme-toggle-content">
             <button class="theme-toggle">
               <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
               <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
@@ -190,32 +192,32 @@
           </label>
         </div>
         <article role="main">
-          <div class="section" id="grading-edition">
+          <section id="grading-edition">
 <h1>Grading Edition<a class="headerlink" href="#grading-edition" title="Permalink to this heading">#</a></h1>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>This docs might be deprecated!</p>
 </div>
 <p>Developers should look <a class="reference internal" href="../grading.dev/"><span class="doc">here</span></a>.</p>
-<div class="section" id="how-do-i-run-the-plugin">
+<section id="how-do-i-run-the-plugin">
 <h2>How do I run the plugin?<a class="headerlink" href="#how-do-i-run-the-plugin" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Our GitHub CI run builds eclipse distros (Linux / Windows) containing the plugin. Download it <a class="reference external" href="https://github.com/kit-sdq/programming-lecture-eclipse-artemis/actions/workflows/products.yml">here</a>.</p></li>
 <li><p>In case you are using macOS, you might need to add our Update Site to run the plugin. It can be found <a class="reference external" href="https://kit-sdq.github.io/programming-lecture-eclipse-artemis/">here</a>.</p></li>
 </ul>
-<div class="section" id="macos-user">
+<section id="macos-user">
 <h3>macOS User<a class="headerlink" href="#macos-user" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p>The package bundle is missing notarization thus it cannot be opened by simply double-clicking it (cf. <a class="reference external" href="https://github.com/kit-sdq/programming-lecture-eclipse-artemis/issues/129">#129</a>).</p></li>
 </ul>
-<img alt="../../_images/gatekeeper.png" src="../../_images/gatekeeper.png"/>
+<img alt="../../_images/gatekeeper.png" src="../../_images/gatekeeper.png" />
 <ul class="simple">
 <li><p>To open the application anyways, you have to open the context menu (right click) and select <cite>Open</cite>. This triggers the following dialog which allows you to circumvent Gatekeeper.</p></li>
 </ul>
-<img alt="../../_images/gatekeeper-resolve.png" src="../../_images/gatekeeper-resolve.png"/>
-</div>
-</div>
-<div class="section" id="working-with-the-gui">
+<img alt="../../_images/gatekeeper-resolve.png" src="../../_images/gatekeeper-resolve.png" />
+</section>
+</section>
+<section id="working-with-the-gui">
 <h2>Working with the GUI<a class="headerlink" href="#working-with-the-gui" title="Permalink to this heading">#</a></h2>
 <p>The GUI consists (mainly) of two parts:</p>
 <ul class="simple">
@@ -223,7 +225,7 @@
 <li><p>Assessment Annotations View</p></li>
 </ul>
 <p>Both can be open directly by open the Artemis Perspective.</p>
-<div class="section" id="artemis-grading-view">
+<section id="artemis-grading-view">
 <h3>Artemis Grading View<a class="headerlink" href="#artemis-grading-view" title="Permalink to this heading">#</a></h3>
 <p>The Artemis Grading View is a tab folder with three tabs:</p>
 <ul class="simple">
@@ -231,7 +233,7 @@
 <li><p>Grading</p></li>
 <li><p>Tests (show test results from artemis)</p></li>
 </ul>
-<div class="section" id="assessment-backlog">
+<section id="assessment-backlog">
 <h4>Assessment / Backlog<a class="headerlink" href="#assessment-backlog" title="Permalink to this heading">#</a></h4>
 <p>The assessment tab has the following functions:</p>
 <ul class="simple">
@@ -240,11 +242,11 @@
 <li><p>Refresh Artemis state (if something changed)</p></li>
 </ul>
 <p>After a new assessment is started, it is possible to reload, save or submit the started assessment (using the buttons).</p>
-<img alt="../../_images/gradingedition_assessment.png" src="../../_images/gradingedition_assessment.png"/>
+<img alt="../../_images/gradingedition_assessment.png" src="../../_images/gradingedition_assessment.png" />
 <p>The tab can be used to reload submissions that are already started, saved or submitted. One can filter the submission by selecting a filter in the first combo.
 It is important to selected the specified course and exercise in the assessment tab, otherwise the submission cannot be loaded. After a submission is loaded again, it can be graded and submitted normally.</p>
-</div>
-<div class="section" id="grading">
+</section>
+<section id="grading">
 <h4>Grading<a class="headerlink" href="#grading" title="Permalink to this heading">#</a></h4>
 <p>The grading tab can be used to create annotations for the downloaded submission. The tab is generated whenever a new submission is downloaded.
 For creating a new annotation do the following:</p>
@@ -254,78 +256,79 @@ For creating a new annotation do the following:</p>
 <li><p>After that you should see the new annotation in the assessment annotation view.</p></li>
 <li><p><strong>Note: If you Shift-Click or Middle-Click a button, you can provide additional information for the student.</strong></p></li>
 </ul>
-<img alt="../../_images/gradingedition_grading.png" src="../../_images/gradingedition_grading.png"/>
-</div>
-<div class="section" id="artemis-tests">
+<img alt="../../_images/gradingedition_grading.png" src="../../_images/gradingedition_grading.png" />
+</section>
+<section id="artemis-tests">
 <h4>Artemis Tests<a class="headerlink" href="#artemis-tests" title="Permalink to this heading">#</a></h4>
 <p>The test view provides an overview on the test results of Artemis.
 If there is some detail output, you can simply click on the row to read it.</p>
-<img alt="../../_images/gradingedition_tests.png" src="../../_images/gradingedition_tests.png"/>
-</div>
-<div class="section" id="artemis-preferences">
+<img alt="../../_images/gradingedition_tests.png" src="../../_images/gradingedition_tests.png" />
+</section>
+<section id="artemis-preferences">
 <h4>Artemis Preferences<a class="headerlink" href="#artemis-preferences" title="Permalink to this heading">#</a></h4>
 <p>User data are persisted in the Artemis Grading Preferences. You can what you need to fill in down below. The relative path of the config refers to the downloaded project and can be activated by the check box. To update the preferences, the “Refresh Artemis State” button must be pressed in the Assessment tab. Otherwise the changes will only take effect after a restart.</p>
-<img alt="../../_images/preferences.png" src="../../_images/preferences.png"/>
-<img alt="../../_images/preferences-details.png" src="../../_images/preferences-details.png"/>
-</div>
-<div class="section" id="assessment-annotation-view">
+<img alt="../../_images/preferences.png" src="../../_images/preferences.png" />
+<img alt="../../_images/preferences-details.png" src="../../_images/preferences-details.png" />
+</section>
+<section id="assessment-annotation-view">
 <h4>Assessment Annotation View<a class="headerlink" href="#assessment-annotation-view" title="Permalink to this heading">#</a></h4>
 <p>The assessment annotation view shows the annotations of the downloaded submission.
 The annotation can be deleted by deleting the marker.</p>
-<img alt="../../_images/gradingedition_annotation.png" src="../../_images/gradingedition_annotation.png"/>
-</div>
-</div>
-</div>
-<div class="section" id="backend-configuration">
+<img alt="../../_images/gradingedition_annotation.png" src="../../_images/gradingedition_annotation.png" />
+</section>
+</section>
+</section>
+<section id="backend-configuration">
 <h2>Backend Configuration<a class="headerlink" href="#backend-configuration" title="Permalink to this heading">#</a></h2>
+<p>This section deals with the configuration of the backend.</p>
 <p>To Configure mistake types, rating groups and whatnot, we use a config file.
 See <a class="reference external" href="https://github.com/kit-sdq/programming-lecture-eclipse-artemis/blob/main/docs/examples/config_v5.json">docs/examples/config_v5.json</a> for an example configuration.</p>
 <p>There are rating groups, mistake types and penalty rules.
 The main config features are explained in the following.
 Be aware of <cite>“positiveFeedbackAllowed”: true</cite> which enables or disables the positive custom feedback ability.</p>
 <p>A rating group consists of multiple mistake types and an optional <em>penaltyLimit</em>. That limit is used for penalty calculation.</p>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="nt">"ratingGroups"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="nt">&quot;ratingGroups&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
 <span class="w">    </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="nt">"shortName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"functionality"</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="nt">"displayName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Funktionalität"</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="nt">"negativeLimit"</span><span class="p">:</span><span class="w"> </span><span class="mi">-20</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="nt">"positiveLimit"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;shortName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;functionality&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;displayName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Funktionalität&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;negativeLimit&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">-20</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;positiveLimit&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w"></span>
 <span class="w">    </span><span class="p">}</span><span class="w"></span>
 <span class="p">]</span><span class="w"></span>
 </pre></div>
 </div>
 <p>A mistake type belongs to a rating group and has a penalty rule that defines the penalty calculation logic. Config File:</p>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="nt">"mistakeTypes"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="nt">&quot;mistakeTypes&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
 <span class="w">    </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="nt">"shortName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"custom"</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="nt">"button"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Custom Penalty"</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="nt">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="nt">"penaltyRule"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">            </span><span class="nt">"shortName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"customPenalty"</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;shortName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;custom&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;button&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Custom Penalty&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;penaltyRule&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="nt">&quot;shortName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;customPenalty&quot;</span><span class="w"></span>
 <span class="w">        </span><span class="p">},</span><span class="w"></span>
-<span class="w">        </span><span class="nt">"appliesTo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"functionality"</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;appliesTo&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;functionality&quot;</span><span class="w"></span>
 <span class="w">    </span><span class="p">},</span><span class="w"></span>
 <span class="w">    </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="nt">"shortName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"jdEmpty"</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="nt">"button"</span><span class="p">:</span><span class="w"> </span><span class="s2">"JavaDoc Leer"</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="nt">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"JavaDoc ist leer oder nicht vorhanden"</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="nt">"penaltyRule"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">            </span><span class="nt">"shortName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"thresholdPenalty"</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="nt">"threshold"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="nt">"penalty"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;shortName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;jdEmpty&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;button&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;JavaDoc Leer&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;JavaDoc ist leer oder nicht vorhanden&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;penaltyRule&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="nt">&quot;shortName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;thresholdPenalty&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">            </span><span class="nt">&quot;threshold&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"></span>
+<span class="w">            </span><span class="nt">&quot;penalty&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="w"></span>
 <span class="w">        </span><span class="p">},</span><span class="w"></span>
-<span class="w">        </span><span class="nt">"appliesTo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"functionality"</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;appliesTo&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;functionality&quot;</span><span class="w"></span>
 <span class="w">    </span><span class="p">},</span><span class="w"></span>
 <span class="w">    </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="nt">"shortName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"stackingXY"</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="nt">"button"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Stacking (XY)"</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="nt">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Hier wird mehrmals abgezogen"</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="nt">"penaltyRule"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">          </span><span class="nt">"shortName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"stackingPenalty"</span><span class="p">,</span><span class="w"></span>
-<span class="w">          </span><span class="nt">"penalty"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.5</span><span class="p">,</span><span class="w"></span>
-<span class="w">          </span><span class="nt">"maxUses"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;shortName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;stackingXY&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;button&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Stacking (XY)&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Hier wird mehrmals abgezogen&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;penaltyRule&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">          </span><span class="nt">&quot;shortName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;stackingPenalty&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">          </span><span class="nt">&quot;penalty&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.5</span><span class="p">,</span><span class="w"></span>
+<span class="w">          </span><span class="nt">&quot;maxUses&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="w"></span>
 <span class="w">        </span><span class="p">},</span><span class="w"></span>
-<span class="w">        </span><span class="nt">"appliesTo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"functionality"</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;appliesTo&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;functionality&quot;</span><span class="w"></span>
 <span class="w">    </span><span class="p">}</span><span class="w"></span>
 <span class="p">]</span><span class="w"></span>
 </pre></div>
@@ -344,8 +347,8 @@ Be aware of <cite>“positiveFeedbackAllowed”: true</cite> which enables or di
 <li><p>Each Rating group generates a <cite>MANUAL_UNREFERENCED</cite> feedback, visible <em>below</em> the editor (in the browser artemis client). Here, penalty points are given.</p></li>
 <li><p>Also, one (or more) MANUAL_UNREFERENCED feedback (invisible for students) is generated, which is used as a database for this client (containing serialized client-specific annotation data, including model identifiers, gui markers, startLine, endLine, …)</p></li>
 </ul>
-</div>
-</div>
+</section>
+</section>
 
         </article>
       </div>
