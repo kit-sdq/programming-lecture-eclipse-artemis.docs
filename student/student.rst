@@ -4,7 +4,9 @@ Student Edition
 Artemis Preferences
 -------------------
 
-User data are persisted in the Artemis Grading Preferences. You can what you need to fill in down below. The relative path of the config refers to the downloaded project and can be activated by the check box. To update the preferences, the "Refresh Artemis State" button must be pressed in the Assessment tab. Otherwise the changes will only take effect after a restart.
+User data are persisted in the Artemis Plugin Preferences. You can what you need to fill in down below.
+To update the preferences, the "Refresh Preferences" button must be pressed in the Exercise tab.
+Otherwise, the changes will only take effect after a restart.
 
 .. image:: ../images/preferences.png
 
