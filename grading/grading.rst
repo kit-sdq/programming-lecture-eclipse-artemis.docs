@@ -101,7 +101,7 @@ Backend Configuration
 This section deals with the configuration of the backend.
 
 Configuration File
-""""""""""""""""""
+^^^^^^^^^^^^^^^^^^
 
 To Configure mistake types, rating groups and whatnot, we use a config file.
 See `docs/examples/config_v5.json <https://github.com/kit-sdq/programming-lecture-eclipse-artemis/blob/main/docs/examples/config_v5.json>`_ for an example configuration.
@@ -111,7 +111,7 @@ The main config features are explained in the following.
 Be aware of `"positiveFeedbackAllowed": true` which enables or disables the positive custom feedback ability.
 
 Rating Groups
-"""""""""""""
+^^^^^^^^^^^^^
 
 A rating group consists of multiple mistake types and an optional *penaltyLimit*. That limit is used for penalty calculation.
 
@@ -128,7 +128,7 @@ A rating group consists of multiple mistake types and an optional *penaltyLimit*
 
 
 Mistake Types
-"""""""""""""
+^^^^^^^^^^^^^
 
 A mistake type belongs to a rating group and has a penalty rule that defines the penalty calculation logic. Config File:
 
@@ -171,7 +171,7 @@ A mistake type belongs to a rating group and has a penalty rule that defines the
 See the Development chapter for more info about creating a new `PenaltyRule`.
 
 Penalty Calculation / Artemis Mapping
-"""""""""""""""""""""""""""""""""""""
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Currently, there are two penalty rule types you may use in your config:
 
