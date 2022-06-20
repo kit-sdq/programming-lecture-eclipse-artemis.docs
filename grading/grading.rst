@@ -108,7 +108,7 @@ Configuration File
 ^^^^^^^^^^^^^^^^^^
 
 To Configure mistake types, rating groups and whatnot, we use a config file.
-See `docs/examples/config_v5.json <https://github.com/kit-sdq/programming-lecture-eclipse-artemis/blob/main/docs/examples/config_v5.json>`_ for an example configuration.
+See `docs/examples/config_v6.json <https://github.com/kit-sdq/programming-lecture-eclipse-artemis/blob/main/docs/examples/config_v6.json>`_ for an example configuration.
 
 There are rating groups, mistake types, penalty rules and allowed exercises.
 The main config features are explained in the following.
