@@ -185,7 +185,7 @@ If someone tries to start an assessment for an exercise with an id not specified
         42
     ]
 
-where 42 is the id of the exercise. This can be found on the page of the exercise:
+where 42 is the id of the exercise. This can be found in the header of the page of the exercise:
 https://artemis.example.com/course-management/14/programming-exercises/42 .
 
 Also the last number of this URL is the exercise id.
