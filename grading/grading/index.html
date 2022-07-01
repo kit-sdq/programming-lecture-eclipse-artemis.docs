@@ -287,8 +287,8 @@ The annotation can be deleted by deleting the marker.</p>
 <section id="configuration-file">
 <h3>Configuration File<a class="headerlink" href="#configuration-file" title="Permalink to this heading">#</a></h3>
 <p>To Configure mistake types, rating groups and whatnot, we use a config file.
-See <a class="reference external" href="https://github.com/kit-sdq/programming-lecture-eclipse-artemis/blob/main/docs/examples/config_v5.json">docs/examples/config_v5.json</a> for an example configuration.</p>
-<p>There are rating groups, mistake types and penalty rules.
+See <a class="reference external" href="https://github.com/kit-sdq/programming-lecture-eclipse-artemis/blob/main/docs/examples/config_v6.json">docs/examples/config_v6.json</a> for an example configuration.</p>
+<p>There are rating groups, mistake types, penalty rules, and allowed exercises.
 The main config features are explained in the following.
 Be aware of <cite>“positiveFeedbackAllowed”: true</cite> which enables or disables the positive custom feedback ability.</p>
 </section>
@@ -345,6 +345,20 @@ Be aware of <cite>“positiveFeedbackAllowed”: true</cite> which enables or di
 </pre></div>
 </div>
 <p>See the Development chapter for more info about creating a new <cite>PenaltyRule</cite>.</p>
+</section>
+<section id="allowed-exercises">
+<h3>Allowed Exercises<a class="headerlink" href="#allowed-exercises" title="Permalink to this heading">#</a></h3>
+<p>There is an option to specify which exercises a configuration should be used for.
+If someone tries to start an assessment for an exercise with an id not specified in the configuration, a warning is shown.</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="nt">&quot;allowedExercises&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">    </span><span class="mi">42</span><span class="w"></span>
+<span class="p">]</span><span class="w"></span>
+</pre></div>
+</div>
+<p>where 42 is the id of the exercise. This can be found in the header of the page of the exercise:
+<a class="reference external" href="https://artemis.example.com/course-management/14/programming-exercises/42">https://artemis.example.com/course-management/14/programming-exercises/42</a> .</p>
+<p>Also the last number of this URL is the exercise id.</p>
+<p>There can be any number of exercise ids in a configuration, if none is specified, no validation of the id will be done.</p>
 </section>
 <section id="penalty-calculation-artemis-mapping">
 <h3>Penalty Calculation / Artemis Mapping<a class="headerlink" href="#penalty-calculation-artemis-mapping" title="Permalink to this heading">#</a></h3>
@@ -447,6 +461,7 @@ Be aware of <cite>“positiveFeedbackAllowed”: true</cite> which enables or di
 <li><a class="reference internal" href="#configuration-file">Configuration File</a></li>
 <li><a class="reference internal" href="#rating-groups">Rating Groups</a></li>
 <li><a class="reference internal" href="#mistake-types">Mistake Types</a></li>
+<li><a class="reference internal" href="#allowed-exercises">Allowed Exercises</a></li>
 <li><a class="reference internal" href="#penalty-calculation-artemis-mapping">Penalty Calculation / Artemis Mapping</a></li>
 </ul>
 </li>
