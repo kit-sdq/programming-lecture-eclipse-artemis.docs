@@ -5,8 +5,8 @@
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 <link rel="index" title="Index" href="../../genindex/" /><link rel="search" title="Search" href="../../search/" /><link rel="next" title="Grading Edition (Development)" href="../grading.dev/" /><link rel="prev" title="Programming Lecture: Eclipse Artemis" href="../../" />
 
-    <meta name="generator" content="sphinx-5.2.3, furo 2022.09.29"/>
-        <title>Grading Edition - Programming Lecture: Eclipse Artemis 2.6.0 documentation</title>
+    <meta name="generator" content="sphinx-5.3.0, furo 2022.09.29"/>
+        <title>Grading Edition - Programming Lecture: Eclipse Artemis 2.8.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=d81277517bee4d6b0349d71bb2661d4890b5617c" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
@@ -123,7 +123,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../../"><div class="brand">Programming Lecture: Eclipse Artemis 2.6.0 documentation</div></a>
+      <a href="../../"><div class="brand">Programming Lecture: Eclipse Artemis 2.8.0 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -146,7 +146,7 @@
       <div class="sidebar-sticky"><a class="sidebar-brand" href="../../">
   
   
-  <span class="sidebar-brand-text">Programming Lecture: Eclipse Artemis 2.6.0 documentation</span>
+  <span class="sidebar-brand-text">Programming Lecture: Eclipse Artemis 2.8.0 documentation</span>
   
 </a><form class="sidebar-search-container" method="get" action="../../search/" role="search">
   <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
@@ -242,7 +242,7 @@
 <li><p>Start assessment (correction round 1 or 2)</p></li>
 <li><p>Refresh Artemis state (if something changed)</p></li>
 </ul>
-<p>After a new assessment is started, it is possible to reload, save or submit the started assessment (using the buttons).</p>
+<p>After a new assessment is started, it is possible to reload, save, close or submit the started assessment (using the buttons).</p>
 <img alt="../../_images/gradingedition_assessment.png" src="../../_images/gradingedition_assessment.png" />
 <p>The tab can be used to reload submissions that are already started, saved or submitted. One can filter the submission by selecting a filter in the first combo.
 It is important to selected the specified course and exercise in the assessment tab, otherwise the submission cannot be loaded. After a submission is loaded again, it can be graded and submitted normally.</p>
@@ -256,6 +256,7 @@ For creating a new annotation do the following:</p>
 <li><p>Click on the mistake button in the certain rating group</p></li>
 <li><p>After that you should see the new annotation in the assessment annotation view.</p></li>
 <li><p><strong>Note: If you Shift-Click or Middle-Click a button, you can provide additional information for the student.</strong></p></li>
+<li><p><strong>Note: You can also use a keyboard shortcut for adding annotations (see below).</strong></p></li>
 </ul>
 <img alt="../../_images/gradingedition_grading.png" src="../../_images/gradingedition_grading.png" />
 </section>
@@ -279,6 +280,20 @@ Otherwise, the changes will only take effect after a restart.</p>
 <p>The assessment annotation view shows the annotations of the downloaded submission.
 The annotation can be deleted by deleting the marker.</p>
 <img alt="../../_images/gradingedition_annotation.png" src="../../_images/gradingedition_annotation.png" />
+</section>
+<section id="keyboard-shortcuts">
+<span id="id3"></span><h4>Keyboard Shortcuts<a class="headerlink" href="#keyboard-shortcuts" title="Permalink to this heading">#</a></h4>
+<ul>
+<li><p>When an editor is active, press Alt+Enter to insert an assessment annotation at the current line.
+The shortcut opens a dialog where you can search for the desired mistake type.
+Press Enter to add the annotation or Shift+Enter to add a custom message to the annotation.
+You can also click or shift-click a mistake type in the list of annotations.</p>
+<p>By default, the dialog will search in the names and descriptions of the mistake types as they are shown on the mistake buttons.
+You can change the behavior in the settings to include only the name of the mistake type.
+You can change the keyboard shortcut for adding an assessment annotation in the Eclipse preferences under <cite>General &gt; Keys &gt; &lt;Add annotation commmand&gt;</cite>.</p>
+<img alt="../../_images/add_annotation.png" src="../../_images/add_annotation.png" />
+</li>
+</ul>
 </section>
 </section>
 </section>
@@ -454,6 +469,7 @@ If someone tries to start an assessment for an exercise with an id not specified
 <li><a class="reference internal" href="#artemis-tests">Artemis Tests</a></li>
 <li><a class="reference internal" href="#artemis-preferences">Artemis Preferences</a></li>
 <li><a class="reference internal" href="#assessment-annotation-view">Assessment Annotation View</a></li>
+<li><a class="reference internal" href="#keyboard-shortcuts">Keyboard Shortcuts</a></li>
 </ul>
 </li>
 </ul>
