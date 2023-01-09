@@ -5,7 +5,7 @@
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 <link rel="index" title="Index" href="../../genindex/" /><link rel="search" title="Search" href="../../search/" /><link rel="next" title="Grading Edition (Development)" href="../grading.dev/" /><link rel="prev" title="Programming Lecture: Eclipse Artemis" href="../../" />
 
-    <!-- Generated with Sphinx 5.3.0 and Furo 2022.12.07 -->
+    <!-- Generated with Sphinx 6.0.0 and Furo 2022.12.07 -->
         <title>Grading Edition - Programming Lecture: Eclipse Artemis 2.9.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=91d0f0d1c444bdcb17a68e833c7a53903343c195" />
@@ -311,53 +311,53 @@ Be aware of <cite>“positiveFeedbackAllowed”: true</cite> which enables or di
 <section id="rating-groups">
 <h3>Rating Groups<a class="headerlink" href="#rating-groups" title="Permalink to this heading">#</a></h3>
 <p>A rating group consists of multiple mistake types and an optional <em>penaltyLimit</em>. That limit is used for penalty calculation.</p>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="nt">&quot;ratingGroups&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
-<span class="w">    </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="nt">&quot;shortName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;functionality&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="nt">&quot;displayName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Funktionalität&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="nt">&quot;negativeLimit&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">-20</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="nt">&quot;positiveLimit&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="p">]</span><span class="w"></span>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="nt">&quot;ratingGroups&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;shortName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;functionality&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;displayName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Funktionalität&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;negativeLimit&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">-20</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;positiveLimit&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">]</span>
 </pre></div>
 </div>
 </section>
 <section id="mistake-types">
 <h3>Mistake Types<a class="headerlink" href="#mistake-types" title="Permalink to this heading">#</a></h3>
 <p>A mistake type belongs to a rating group and has a penalty rule that defines the penalty calculation logic. Config File:</p>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="nt">&quot;mistakeTypes&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
-<span class="w">    </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="nt">&quot;shortName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;custom&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="nt">&quot;button&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Custom Penalty&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="nt">&quot;penaltyRule&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">            </span><span class="nt">&quot;shortName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;customPenalty&quot;</span><span class="w"></span>
-<span class="w">        </span><span class="p">},</span><span class="w"></span>
-<span class="w">        </span><span class="nt">&quot;appliesTo&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;functionality&quot;</span><span class="w"></span>
-<span class="w">    </span><span class="p">},</span><span class="w"></span>
-<span class="w">    </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="nt">&quot;shortName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;jdEmpty&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="nt">&quot;button&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;JavaDoc Leer&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;JavaDoc ist leer oder nicht vorhanden&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="nt">&quot;penaltyRule&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">            </span><span class="nt">&quot;shortName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;thresholdPenalty&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="nt">&quot;threshold&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="nt">&quot;penalty&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="w"></span>
-<span class="w">        </span><span class="p">},</span><span class="w"></span>
-<span class="w">        </span><span class="nt">&quot;appliesTo&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;functionality&quot;</span><span class="w"></span>
-<span class="w">    </span><span class="p">},</span><span class="w"></span>
-<span class="w">    </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="nt">&quot;shortName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;stackingXY&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="nt">&quot;button&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Stacking (XY)&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Hier wird mehrmals abgezogen&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="nt">&quot;penaltyRule&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">          </span><span class="nt">&quot;shortName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;stackingPenalty&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">          </span><span class="nt">&quot;penalty&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.5</span><span class="p">,</span><span class="w"></span>
-<span class="w">          </span><span class="nt">&quot;maxUses&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="w"></span>
-<span class="w">        </span><span class="p">},</span><span class="w"></span>
-<span class="w">        </span><span class="nt">&quot;appliesTo&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;functionality&quot;</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="p">]</span><span class="w"></span>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="nt">&quot;mistakeTypes&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;shortName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;custom&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;button&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Custom Penalty&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;penaltyRule&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;shortName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;customPenalty&quot;</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="nt">&quot;appliesTo&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;functionality&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;shortName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;jdEmpty&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;button&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;JavaDoc Leer&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;JavaDoc ist leer oder nicht vorhanden&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;penaltyRule&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;shortName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;thresholdPenalty&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;threshold&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;penalty&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="nt">&quot;appliesTo&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;functionality&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;shortName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;stackingXY&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;button&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Stacking (XY)&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Hier wird mehrmals abgezogen&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;penaltyRule&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="nt">&quot;shortName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;stackingPenalty&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;penalty&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.5</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;maxUses&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="nt">&quot;appliesTo&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;functionality&quot;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">]</span>
 </pre></div>
 </div>
 <p>See the Development chapter for more info about creating a new <cite>PenaltyRule</cite>.</p>
@@ -366,9 +366,9 @@ Be aware of <cite>“positiveFeedbackAllowed”: true</cite> which enables or di
 <h3>Allowed Exercises<a class="headerlink" href="#allowed-exercises" title="Permalink to this heading">#</a></h3>
 <p>There is an option to specify which exercises a configuration should be used for.
 If someone tries to start an assessment for an exercise with an id not specified in the configuration, a warning is shown.</p>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="nt">&quot;allowedExercises&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
-<span class="w">    </span><span class="mi">42</span><span class="w"></span>
-<span class="p">]</span><span class="w"></span>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="nt">&quot;allowedExercises&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="mi">42</span>
+<span class="p">]</span>
 </pre></div>
 </div>
 <p>where 42 is the id of the exercise. This can be found in the header of the page of the exercise:
@@ -424,7 +424,7 @@ If someone tries to start an assessment for an exercise with an id not specified
         <div class="bottom-of-page">
           <div class="left-details">
             <div class="copyright">
-                Copyright &#169; 2021-2022, Software Design and Quality (SDQ)
+                Copyright &#169; 2021-2023, Software Design and Quality (SDQ)
             </div>
             Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
             
@@ -494,9 +494,6 @@ If someone tries to start an assessment for an exercise with an id not specified
     </aside>
   </div>
 </div><script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/jquery.js"></script>
-    <script src="../../_static/underscore.js"></script>
-    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/sphinx_highlight.js"></script>
     <script src="../../_static/scripts/furo.js"></script>

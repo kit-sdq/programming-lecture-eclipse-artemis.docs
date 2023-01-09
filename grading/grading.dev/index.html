@@ -5,7 +5,7 @@
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 <link rel="index" title="Index" href="../../genindex/" /><link rel="search" title="Search" href="../../search/" /><link rel="next" title="Student Edition" href="../../student/student/" /><link rel="prev" title="Grading Edition" href="../grading/" />
 
-    <!-- Generated with Sphinx 5.3.0 and Furo 2022.12.07 -->
+    <!-- Generated with Sphinx 6.0.0 and Furo 2022.12.07 -->
         <title>Grading Edition (Development) - Programming Lecture: Eclipse Artemis 2.9.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=91d0f0d1c444bdcb17a68e833c7a53903343c195" />
@@ -320,10 +320,10 @@ The initial values are set in the <em>PreferenceInitializer</em> class.</p>
 <p>An example with the field for the absolute config path:</p>
 <div class="literal-block-wrapper docutils container" id="id1">
 <div class="code-block-caption"><span class="caption-text">Preferences</span><a class="headerlink" href="#id1" title="Permalink to this code">#</a></div>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="w"> </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">createFieldEditors</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">             </span><span class="kd">var</span><span class="w"> </span><span class="n">field</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">FileFieldEditor</span><span class="p">(</span><span class="n">PreferenceConstants</span><span class="p">.</span><span class="na">ABSOLUTE_CONFIG_PATH</span><span class="p">,</span><span class="w"> </span><span class="n">I18N</span><span class="p">().</span><span class="na">config</span><span class="p">(),</span><span class="w"> </span><span class="n">parent</span><span class="p">);</span><span class="w"></span>
-<span class="w">             </span><span class="k">this</span><span class="p">.</span><span class="na">addField</span><span class="p">(</span><span class="n">field</span><span class="p">);</span><span class="w"></span>
-<span class="w">     </span><span class="p">}</span><span class="w"></span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="w"> </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">createFieldEditors</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">             </span><span class="kd">var</span><span class="w"> </span><span class="n">field</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">FileFieldEditor</span><span class="p">(</span><span class="n">PreferenceConstants</span><span class="p">.</span><span class="na">ABSOLUTE_CONFIG_PATH</span><span class="p">,</span><span class="w"> </span><span class="n">I18N</span><span class="p">().</span><span class="na">config</span><span class="p">(),</span><span class="w"> </span><span class="n">parent</span><span class="p">);</span>
+<span class="w">             </span><span class="k">this</span><span class="p">.</span><span class="na">addField</span><span class="p">(</span><span class="n">field</span><span class="p">);</span>
+<span class="w">     </span><span class="p">}</span>
 </pre></div>
 </div>
 </div>
@@ -346,30 +346,30 @@ If the field should appear in the Assessment Annotation View, a class needs to b
 </dl>
 </li>
 </ol>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">enum</span><span class="w"> </span><span class="n">PenaltyRuleType</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="c1">//Need to add a new enum value with a short Name (that must be used in the config file) and a constructor based on the json node.</span><span class="w"></span>
-<span class="w">        </span><span class="n">THRESHOLD_PENALTY_RULE_TYPE</span><span class="w"> </span><span class="p">(</span><span class="n">ThresholdPenaltyRule</span><span class="p">.</span><span class="na">SHORT_NAME</span><span class="p">,</span><span class="w"> </span><span class="n">ThresholdPenaltyRule</span><span class="p">::</span><span class="k">new</span><span class="p">),</span><span class="w"></span>
-<span class="w">        </span><span class="n">CUSTOM_PENALTY_RULE_TYPE</span><span class="w"> </span><span class="p">(</span><span class="n">CustomPenaltyRule</span><span class="p">.</span><span class="na">SHORT_NAME</span><span class="p">,</span><span class="w"> </span><span class="n">penaltyRuleNode</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">CustomPenaltyRule</span><span class="p">()),</span><span class="w"></span>
-<span class="w">        </span><span class="n">MY_NEW_PENALTY_RULE_TYPE</span><span class="w"> </span><span class="p">(</span><span class="n">MyNewPenaltyRule</span><span class="p">.</span><span class="na">SHORT_NAME</span><span class="p">,</span><span class="w"> </span><span class="n">penaltyRuleNode</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">MyNewPenaltyRule</span><span class="p">(</span><span class="n">penaltyRuleNode</span><span class="p">));</span><span class="w"></span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">enum</span><span class="w"> </span><span class="n">PenaltyRuleType</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">//Need to add a new enum value with a short Name (that must be used in the config file) and a constructor based on the json node.</span>
+<span class="w">        </span><span class="n">THRESHOLD_PENALTY_RULE_TYPE</span><span class="w"> </span><span class="p">(</span><span class="n">ThresholdPenaltyRule</span><span class="p">.</span><span class="na">SHORT_NAME</span><span class="p">,</span><span class="w"> </span><span class="n">ThresholdPenaltyRule</span><span class="p">::</span><span class="k">new</span><span class="p">),</span>
+<span class="w">        </span><span class="n">CUSTOM_PENALTY_RULE_TYPE</span><span class="w"> </span><span class="p">(</span><span class="n">CustomPenaltyRule</span><span class="p">.</span><span class="na">SHORT_NAME</span><span class="p">,</span><span class="w"> </span><span class="n">penaltyRuleNode</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">CustomPenaltyRule</span><span class="p">()),</span>
+<span class="w">        </span><span class="n">MY_NEW_PENALTY_RULE_TYPE</span><span class="w"> </span><span class="p">(</span><span class="n">MyNewPenaltyRule</span><span class="p">.</span><span class="na">SHORT_NAME</span><span class="p">,</span><span class="w"> </span><span class="n">penaltyRuleNode</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">MyNewPenaltyRule</span><span class="p">(</span><span class="n">penaltyRuleNode</span><span class="p">));</span>
 </pre></div>
 </div>
 <ol class="arabic simple" start="3">
 <li><p>use the new PenaltyRule in your config.json:</p></li>
 </ol>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="nt">&quot;mistakeTypes&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
-<span class="w">    </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="nt">&quot;shortName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;idk&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="nt">&quot;button&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MyMistakeType&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;You made a grave mistake.&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">        </span><span class="nt">&quot;penaltyRule&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">            </span><span class="nt">&quot;shortName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;myNewPenaltyRule&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="nt">&quot;penalty&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="nt">&quot;penaltyOnMoreThanThreshold&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">500</span><span class="p">,</span><span class="w"></span>
-<span class="w">            </span><span class="nt">&quot;threshold&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="w"></span>
-<span class="w">        </span><span class="p">},</span><span class="w"></span>
-<span class="w">        </span><span class="nt">&quot;appliesTo&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;style&quot;</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="p">]</span><span class="w"></span>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="nt">&quot;mistakeTypes&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;shortName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;idk&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;button&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MyMistakeType&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;You made a grave mistake.&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;penaltyRule&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;shortName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;myNewPenaltyRule&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;penalty&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;penaltyOnMoreThanThreshold&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">500</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;threshold&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="nt">&quot;appliesTo&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;style&quot;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">]</span>
 </pre></div>
 </div>
 </section>
@@ -433,7 +433,7 @@ All calls relevant to our Backend state (see section about the Backend state mac
         <div class="bottom-of-page">
           <div class="left-details">
             <div class="copyright">
-                Copyright &#169; 2021-2022, Software Design and Quality (SDQ)
+                Copyright &#169; 2021-2023, Software Design and Quality (SDQ)
             </div>
             Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
             
@@ -494,9 +494,6 @@ All calls relevant to our Backend state (see section about the Backend state mac
     </aside>
   </div>
 </div><script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/jquery.js"></script>
-    <script src="../../_static/underscore.js"></script>
-    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/sphinx_highlight.js"></script>
     <script src="../../_static/scripts/furo.js"></script>
